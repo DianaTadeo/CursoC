@@ -7,7 +7,10 @@ int factorial(int n){
 		return n*factorial(n-1);
 }
 int main(int argc,char ** argv){
-	int num= strtol(argv[1],NULL,10);
-	int f= factorial(num);
-	printf("%d",f);
+	if(argc>1){
+		int num= strtol(argv[1],NULL,10);
+		int f= factorial(num);
+		printf("%d",f);
+	}else
+		printf("Se debe introducir algun argumento\n");
 }
