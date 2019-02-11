@@ -1,8 +1,10 @@
-/*															*
- * Programa que devuelve el MD5 de una cadena que se le		*
- * pase como argumento utiilizando la biblioteca de OpenSSL.*
- * 															*
- * Autor: DianaTadeo										*
+/*																	*
+ * Programa que devuelve el MD5 de una cadena que se le	pase		*
+ * como argumento utiilizando la biblioteca de OpenSSL.				*
+ * 																	*
+ * Referencia: https://www.openssl.org/docs/man1.0.2/man3/MD2.html	*
+ * 																	*
+ * Autor: DianaTadeo												*
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,7 +17,12 @@
 #  include <openssl/md5.h>
 #endif
 
-char *str2md5(char *str, int length) {
+/*
+ * funcion que calcula el MD5 de una cadena pasada
+ * str: la cadena de la cual se desea calcular el md5
+ * length: la longitud de la cadena.
+ */
+char *generaMD5(char *str, int length) {
     MD5_CTX c; //se genera el contexto
     unsigned char digest[16];
     char *res = (char*)malloc(33);
@@ -32,7 +39,7 @@ char *str2md5(char *str, int length) {
 
 int main(int argc, char **argv) {
 	if (argc >1){
-        char *output = str2md5(*(argv + 1), strlen(*(argv + 1)));
+        char *output=generaMD5(*(argv + 1), strlen(*(argv + 1)));
         printf("%s\n", output);
         free(output);
         return 0;
