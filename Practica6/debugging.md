@@ -18,6 +18,7 @@ Vamos a crear un breakpoint con el comando **b** (alias de breackpoint) poco ant
 
 Usamos el comando **n**(alias de next) para seguir poco a poco con la ejecución hasta donde nos pide una entrada (la contraeña) y se la escribimos. En este caso, como contraseña usaré mi nombre.
 > n
+
 ![4](https://user-images.githubusercontent.com/36577863/52541659-47200500-2d5d-11e9-9fc3-fb87552b166c.PNG)
 
 Antes de seguir con la ejecución, ya puedo ver lo que está escrito en la variable pass (donde se encuentra la contraseña) con el comando **p pass** (p es alias de print).
@@ -27,6 +28,7 @@ Antes de seguir con la ejecución, ya puedo ver lo que está escrito en la varia
 
 Para ver su ubicacion en memoria, es necesario acceder al apuntador con:
 > p &pass
+
 Y podemos ver el contenido explícitamente con el comando **x** con su respectivo formato para cadenas de la variable donde guardamos con el comando anterior.
 > x/1s $2
 
